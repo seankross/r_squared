@@ -60,8 +60,8 @@ ggsave(file.path("graphs", "r2.png"), height = 7, width = 12)
 
 p <- ggplot(
     model_comparisons,
-    aes(x = x_max - x_min, y = e2, color = e2_metric)
-) +
+    aes(x = x_max - x_min, y = e2, color =  factor(e2_metric, levels = 
+                c("linear", "quadratic", "constant")))) +
     geom_point() +
     scale_x_log10() +
     theme_bw() +
